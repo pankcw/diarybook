@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Little Diary</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<form id="auth" class="card hidden">
+ <h2>✿ My Little Diary</h2>
+ <input id="em" type="email" placeholder="Email" required autocomplete="email">
+ <input id="pw" type="password" placeholder="Kata sandi (min. 6 karakter)" required minlength="6" autocomplete="current-password">
+ <button>Masuk</button><button type="button" id="up">Daftar akun baru</button>
+ <p id="msg"></p>
+</form>
+<main id="stage" class="hidden">
+ <section id="book">
+  <div id="bar">
+   <button data-c="bold"><b>B</b></button><button data-c="italic"><i>I</i></button><button data-c="underline"><u>U</u></button>
+   <button data-c="justifyLeft">⇤</button><button data-c="justifyCenter">↔</button><button data-c="insertUnorderedList">≡</button>
+   <select id="fn"><option value="Patrick Hand">Patrick</option><option value="Caveat">Caveat</option><option value="Georgia">Serif</option></select>
+   <select id="fs"><option value="3">Ukuran</option><option value="2">Kecil</option><option value="4">Besar</option><option value="5">Jumbo</option></select>
+   <input id="col" type="color" value="#5b4636" title="Warna tulisan">
+   <select id="emo"><option value="">😊</option><option>🌸</option><option>⭐</option><option>💌</option><option>☕</option><option>🌙</option><option>💛</option></select>
+   <button id="dt" title="Tanggal">📅</button><button id="phb" title="Foto">🖼</button><button id="stk" title="Sticky note">📌</button>
+   <input id="ph" type="file" accept="image/*" hidden>
+   <button id="sv" title="Simpan">💾</button><button id="cl" title="Tutup buku">📕</button><button id="lo" title="Keluar">🚪</button>
+  </div>
+  <div id="page" data-d="f">
+   <input id="t" placeholder="Judul hari ini…" maxlength="80">
+   <div id="c" contenteditable spellcheck="false"></div>
+   <small id="status"></small>
+  </div>
+  <nav id="nav"><button id="b1">⏮</button><button id="b2">◀</button><span id="ind"></span><button id="b3">▶</button><button id="b4">⏭</button><button id="b5" title="Halaman baru">＋</button></nav>
+ </section>
+ <div id="cover">
+  <i class="ribbon"></i>
+  <p class="doodle">🌸 ✦ 🌿</p>
+  <h1 id="ctitle" contenteditable spellcheck="false">My Little Diary</h1>
+  <small id="cdate"></small><em>ketuk sampul untuk membuka</em>
+ </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script><script src="js/main.js"></script>
+</body></html>
