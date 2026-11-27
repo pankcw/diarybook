@@ -1,0 +1,39 @@
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;display:grid;place-items:center;color:#5b4636;font:20px 'Patrick Hand',cursive;background:#e9dfcc radial-gradient(#d3c6ac 1px,transparent 1px) 0 0/18px 18px}
+.hidden{display:none!important}
+input,select,button{font:inherit;color:inherit}
+button{background:#e8c4c4;border:2px solid #8b6b4f;border-radius:8px 10px 8px 12px;min-width:42px;min-height:42px;padding:6px 12px;cursor:pointer;transition:transform .15s,background .15s}
+button:hover{transform:translateY(-2px) rotate(-2deg);background:#a9b79c}
+button:active{transform:scale(.94)}
+.card{display:grid;gap:12px;width:min(90vw,340px);padding:28px;background:#fbf5e6;border-radius:4px;box-shadow:4px 5px 0 #cdbfa4;transform:rotate(-1deg)}
+.card h2{margin:0;font:34px Caveat,cursive;text-align:center}
+.card input{padding:10px;border:2px dashed #b9a88a;border-radius:4px;background:#fffaf0}
+#msg{margin:0;color:#a05a5a;min-height:1em}
+#stage{position:relative;width:min(94vw,480px);height:min(96dvh,780px);perspective:1500px}
+#cover,#book{position:absolute;inset:0}
+#cover{z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;color:#fbf5e6;cursor:pointer;background:#8b6b4f repeating-linear-gradient(45deg,#0000 0 3px,#0001 3px 4px);border-radius:6px 18px 18px 6px;outline:2px dashed #fbf5e6aa;outline-offset:-20px;box-shadow:inset 0 0 0 10px #a78360,10px 12px 0 #0003;transform-origin:left;backface-visibility:hidden;transition:transform 1.1s cubic-bezier(.55,0,.25,1)}
+#cover.open{transform:rotateY(-165deg);pointer-events:none}
+.ribbon{position:absolute;right:44px;top:0;width:28px;height:130px;background:#d9a5a5;clip-path:polygon(0 0,100% 0,100% 100%,50% 85%,0 100%)}
+.doodle{margin:0;font-size:38px;letter-spacing:6px}
+#ctitle{margin:0;padding:14px 24px;max-width:80%;font:44px/1.1 Caveat,cursive;color:#4a4a3a;background:#a9b79c;border-radius:4px;transform:rotate(-2deg);outline:0;box-shadow:2px 3px 0 #0003}
+#cover em{opacity:.8;font-size:17px;animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.3}}
+#book{display:flex;flex-direction:column;gap:8px;opacity:0;pointer-events:none;transition:opacity .5s .35s}
+#book.on{opacity:1;pointer-events:auto}
+#bar,#nav{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:2px 2px 4px;scrollbar-width:none}
+#nav{justify-content:center}
+#bar select,#bar input[type=color]{min-height:42px;border:2px solid #8b6b4f;border-radius:8px;background:#fbf5e6;padding:0 4px}
+#bar input[type=color]{width:42px;padding:2px}
+#page{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;padding:16px 16px 6px 40px;background:#fbf5e6;border-radius:4px 14px 14px 4px;box-shadow:inset 14px 0 14px -10px #0004,5px 6px 0 #cdbfa4;transform-origin:left;transition:transform .28s ease-in-out,box-shadow .28s}
+#page::before{content:'';position:absolute;left:28px;top:0;bottom:0;border-left:2px solid #e8c4c4}
+#page[data-d=b]{transform-origin:right}
+#page.out{transform:rotateY(-82deg);box-shadow:-24px 0 30px #0005}
+#page[data-d=b].out{transform:rotateY(82deg);box-shadow:24px 0 30px #0005}
+#t{border:0;border-bottom:2px dashed #cbbd9f;background:none;outline:0;font:30px Caveat,cursive;color:#5b4636;padding:2px 0}
+#c{flex:1;margin-top:8px;overflow:auto;outline:0;font:22px/32px 'Patrick Hand',cursive;background:repeating-linear-gradient(#0000 0 31px,#d8ccb4 31px 32px) local}
+#c img.photo{display:block;max-width:90%;margin:8px 0;border:8px solid #fff;box-shadow:2px 3px 0 #0003;transform:rotate(-1.5deg)}
+.sticky{display:inline-block;padding:6px 12px;background:#f1e2a6;box-shadow:2px 3px 0 #0003;transform:rotate(-2deg);animation:pop .3s}
+@keyframes pop{from{transform:scale(.5) rotate(-10deg)}}
+#status{text-align:right;color:#8b8068;min-height:1.4em}
+#ind{min-width:70px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
